@@ -83,7 +83,7 @@ defmodule Quantum.Job do
   @spec set_name(t, atom) :: t
   def set_name(%__MODULE__{} = job, name) when is_atom(name), do: Map.put(job, :name, name)
   def set_name(%__MODULE__{} = job, name) when is_reference(name), do: Map.put(job, :name, name)
-  def set_name(%__MODULE__{} = job, name) when is_bitstring(name), do: Map.put(job, :name, name)
+  def set_name(%__MODULE__{} = job, name) when is_binary(name), do: Map.put(job, :name, name)
 
   @doc """
   Sets a job's schedule.
